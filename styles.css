@@ -94,7 +94,7 @@ footer{padding:48px 0 64px;color:var(--muted);font-size:14px;border-top:1px soli
  .journey{grid-template-columns:repeat(5,1fr);gap:8px}.step img{height:120px}
  .gallery{grid-template-columns:repeat(4,1fr);gap:10px}.gallery a{height:320px}
  .gallery-sec{break-before:page}
- #goals,#next,#outcome,#reflection,#role,#journey{break-inside:avoid}
+ #goals,#next,#outcome,#reflection,#role,#journey,#problem,#overview{break-inside:avoid}
  h2,h3,.num{break-after:avoid}
  .card,.decision,.step,.facts{break-inside:avoid}
  .proto-band{background:#fff;color:var(--ink);border:1px solid var(--line);padding:20px}
