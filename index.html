@@ -31,6 +31,54 @@ table.wide{min-width:720px}
   .pair,.journey{grid-template-columns:1fr}
   .frame img{max-width:100%}
 }
+/* This page only. Shared palette, type, and section structure stay in case-study.css. */
+.body > h3{margin-top:4px}
+.body > * + h3{margin-top:36px}
+.body > h3 + p,
+.body > h3 + ul,
+.body > h3 + .legend,
+.body > h3 + .grid,
+.body > h3 + .table-scroll,
+.body > h3 + .callout,
+.body > h3 + .film,
+.body > h3 + .pair{margin-top:12px}
+.grid{align-items:stretch}
+.grid > .card{height:100%}
+.film .figure img{margin-inline:auto}
+#competitive .legend{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;padding:0;max-width:none;font-size:14px;color:var(--muted)}
+#competitive .legend b{color:var(--ink)}
+#competitive .scroll-hint{display:none;font-size:13px;color:var(--muted);max-width:none}
+#competitive .table-scroll{max-width:100%;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);-webkit-overflow-scrolling:touch}
+#competitive table.wide{min-width:860px;border:0;border-radius:0;overflow:visible;border-collapse:separate;border-spacing:0;font-size:14px}
+#competitive table.wide th,
+#competitive table.wide td{vertical-align:top}
+#competitive table.wide th:first-child,
+#competitive table.wide td:first-child{position:sticky;left:0;z-index:1;min-width:168px;background:var(--surface);box-shadow:1px 0 0 var(--line)}
+#competitive table.wide thead th:first-child{z-index:2;background:#FAFAFB}
+#competitive table.wide tr.fresh td,
+#competitive table.wide tr.fresh td:first-child{background:var(--accent-soft)}
+#competitive .who{font-weight:600;color:var(--ink)}
+#competitive .where{display:block;margin-top:2px;font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0;text-transform:none}
+#competitive td.qual{min-width:156px;font-size:13px;line-height:1.45}
+#competitive table.wide th{text-transform:none;letter-spacing:0;font-size:13px;line-height:1.3}
+#competitive th.mark,#competitive td.mark{text-align:center;min-width:104px}
+#competitive table.wide td.mark{font-weight:600;color:var(--accent);vertical-align:middle}
+#competitive .note{font-size:14px;color:var(--muted);max-width:none}
+#competitive td.mark.partial{color:var(--ink)}
+#competitive td.mark.no{color:var(--muted);font-weight:500}
+#personas .body > .persona{margin-top:16px}
+@media (max-width:900px){
+  #competitive .scroll-hint{display:block}
+  .body > * + h3{margin-top:28px}
+}
+@media (max-width:560px){
+  #personas .persona{gap:14px}
+  #competitive table.wide th,
+  #competitive table.wide td{padding:12px}
+  #competitive table.wide th:first-child,
+  #competitive table.wide td:first-child{min-width:136px}
+  #competitive th.mark,#competitive td.mark{min-width:96px}
+}
 </style>
 </head>
 <body>
@@ -48,7 +96,7 @@ table.wide{min-width:720px}
   <p style="margin-top:18px"><a href="walkthrough.html">Try the clickable prototype</a></p>
   <dl class="meta">
     <div><dt>Role</dt><dd>Senior Product / UX Designer</dd></div>
-    <div><dt>Timeline</dt><dd>Amazon · Aug 2020 – Feb 2023</dd></div>
+    <div><dt>Timeline</dt><dd>10 months</dd></div>
     <div><dt>Team</dt><dd>Product and engineering partners</dd></div>
     <div><dt>Platform</dt><dd>Amazon.in mobile, Fresh storefront</dd></div>
     <div><dt>Tools</dt><dd>Figma for design and prototyping</dd></div>
@@ -178,9 +226,9 @@ table.wide{min-width:720px}
   <div class="body">
     <div class="grid g2">
       <div class="card"><span class="tag">Survey</span><h3>48 people who cook and buy groceries</h3><p>Aged 18 to 55: students, employees, and homemakers. I asked what they thought of offline grocery shopping, which features they wanted, whether recipes are easy to find, how often they lack an ingredient, and how likely they were to use a same-day feature that covered those gaps.</p></div>
-      <div class="card"><span class="tag">Competitive review</span><h3>Recipe shopping, and how fast the groceries arrive</h3><p>I compared BigBasket, DMart Ready, Jio, and Grofers on a mobile app, grocery buying, a recipe feature, and same-day delivery. Fresh was the only app in the set with 2-hour delivery. The full chart is in Competitive analysis.</p></div>
+      <div class="card"><span class="tag">Competitive review</span><h3>Recipe shopping, and how fast the groceries arrive</h3><p>The first pass compared BigBasket, DMart Ready, Jio, and Grofers on a mobile app, grocery buying, a recipe feature, and same-day delivery. Fresh was the only app in that set with 2-hour delivery. Competitive analysis keeps those four and sets them next to other grocery and recipe-to-cart services.</p></div>
       <div class="card"><span class="tag">Insight synthesis</span><h3>The missing ingredient is the whole problem</h3><p>When people cook something elaborate, they are often short one or two ingredients and make another trip. Shop by Recipe is for seeing the dish, seeing what is missing, and having just those items arrive in time to cook.</p></div>
-      <div class="card"><span class="tag">Personas</span><h3>Three cooks, not one</h3><p>Ankit, Sakshi, and Harsh, written so the feature was not aimed at one kind of cook: someone who works, someone who hosts, and a student. Their boards are in User personas.</p></div>
+      <div class="card"><span class="tag">Personas</span><h3>Three cooks, not one</h3><p>Ankit, Sakshi, and Harsh, written so the feature was not aimed at one kind of cook: someone who works, someone who hosts, and a student. Their cards are in User personas.</p></div>
     </div>
 
     <h3 id="survey">48 people who cook and buy the groceries</h3>
@@ -225,29 +273,151 @@ table.wide{min-width:720px}
 <section class="cs-section" id="competitive"><div class="wrap">
   <div class="head"><div class="num">07</div><div><h2>Competitive Analysis</h2><p>Who already sold recipes, and who could deliver them.</p></div></div>
   <div class="body">
-    <p>I compared grocery apps on two things that mattered for this feature: whether you could shop from a recipe, and how fast the groceries arrived. Amazon Fresh was the only one with 2-hour delivery. BigBasket does have a recipe feature, bb cookbook, but it falls short on delivery time and on the experience of getting from a dish to a basket.</p>
-    <p>The survey is what made the delivery gap decisive. 95.8% of participants preferred shopping for recipe ingredients with 2-hour delivery. Fresh was the app that could actually offer that, so it was the right place to design the feature.</p>
+    <p>I compared grocery apps on two things that mattered for this feature: whether you could shop from a recipe, and how fast the groceries arrived. The first pass was BigBasket, DMart Ready, Jio, and Grofers. BigBasket's bb cookbook was the only recipe feature in that set, and it still fell short of a 2-hour trip from a dish to a basket. Fresh was the app that could offer that delivery.</p>
+    <p>The survey is what made the delivery gap decisive. 95.8% of participants preferred shopping for recipe ingredients with 2-hour delivery. The table keeps those four and sets them next to other grocery and recipe-to-cart services that were live in India and globally while this was designed. Marks are qualitative. There are no share or usage figures.</p>
+    <ul class="legend">
+      <li><b>Yes</b> — the capability was part of the product</li>
+      <li><b>Partial</b> — a limited version, or split across two products</li>
+      <li><b>No</b> — not part of the product</li>
+    </ul>
+    <p class="scroll-hint">On a small screen, scroll the table sideways. The name column stays put.</p>
     <div class="table-scroll">
     <table class="wide">
       <thead>
-        <tr><th>App</th><th>Mobile app</th><th>Grocery buying</th><th>Recipe feature</th><th>Same-day delivery</th></tr>
+        <tr>
+          <th>Service</th>
+          <th class="mark">Recipes</th>
+          <th class="mark">Add all<br>to cart</th>
+          <th class="mark">Serving<br>scale</th>
+          <th class="mark">Substitutions</th>
+          <th>Delivery</th>
+          <th>Personalization</th>
+        </tr>
       </thead>
       <tbody>
-        <tr><td>BigBasket</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
-        <tr><td>DMart Ready</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
-        <tr><td>Jio</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
-        <tr><td>Grofers</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+        <tr class="fresh">
+          <td><span class="who">Amazon Fresh</span><span class="where">India · before Shop by Recipe</span></td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="qual">About 2 hours on the Fresh storefront</td>
+          <td class="qual">Past purchases and recommendations already in Fresh</td>
+        </tr>
+        <tr>
+          <td><span class="who">BigBasket</span><span class="where">India · kept from the original set</span></td>
+          <td class="mark">Yes</td>
+          <td class="mark">Yes</td>
+          <td class="mark">Yes</td>
+          <td class="mark partial">Partial</td>
+          <td class="qual">Slotted delivery, often same day. A later express shop, bbnow, promised roughly 10–20 minutes in select cities and did not carry the cookbook.</td>
+          <td class="qual">Store recommendations. Cookbook shelves were editorial collections.</td>
+        </tr>
+        <tr>
+          <td><span class="who">DMart Ready</span><span class="where">India · kept from the original set</span></td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="qual">A chosen slot for home delivery, or free pickup from a DMart Ready point. Not a 2-hour recipe promise.</td>
+          <td class="qual">Little beyond the basket you build</td>
+        </tr>
+        <tr>
+          <td><span class="who">JioMart (Jio)</span><span class="where">India · kept from the original set</span></td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="qual">Scheduled home delivery, same day in some pin codes and next day in others. Not a minutes-scale service, and no in-app cookbook.</td>
+          <td class="qual">Reorder and offers</td>
+        </tr>
+        <tr>
+          <td><span class="who">Blinkit (Grofers)</span><span class="where">India · Grofers, then Blinkit</span></td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="qual">Scheduled grocery as Grofers, then about 10 minutes after the rebrand to Blinkit. Still no recipe-to-cart.</td>
+          <td class="qual">Reorder</td>
+        </tr>
+        <tr>
+          <td><span class="who">Swiggy Instamart</span><span class="where">India</span></td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="qual">About 15–30 minutes for a dark-store grocery list, in the cities it had opened. No path from a dish to a cart.</td>
+          <td class="qual">Reorder inside Swiggy</td>
+        </tr>
+        <tr>
+          <td><span class="who">Zepto</span><span class="where">India</span></td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="qual">About 10 minutes from its launch, in a handful of cities. A short grocery catalog, not recipes.</td>
+          <td class="qual">Reorder</td>
+        </tr>
+        <tr>
+          <td><span class="who">Dunzo Daily</span><span class="where">India</span></td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="qual">About 19 minutes for a short catalog of daily groceries, first in Bengaluru. Not a recipe shop.</td>
+          <td class="qual">Popular local lists, not recipes</td>
+        </tr>
+        <tr>
+          <td><span class="who">Instacart</span><span class="where">Global · shoppable recipes</span></td>
+          <td class="mark partial">Partial</td>
+          <td class="mark">Yes</td>
+          <td class="mark no">No</td>
+          <td class="mark partial">Partial</td>
+          <td class="qual">Same-day grocery, often within hours. Shoppable recipes lived on partner pages (TikTok, Tasty, Hearst) and added that recipe's quantities.</td>
+          <td class="qual">Past orders and store suggestions. Replacements cover a missing grocery item, not a recipe swap.</td>
+        </tr>
+        <tr>
+          <td><span class="who">Walmart+ via SideChef</span><span class="where">Global · shoppable recipes</span></td>
+          <td class="mark">Yes</td>
+          <td class="mark">Yes</td>
+          <td class="mark">Yes</td>
+          <td class="mark">Yes</td>
+          <td class="qual">SideChef holds the recipes. Changing servings updates the list. You can swap brand, size, or a substitute, leave pantry items off, then send the rest to a Walmart cart for same-day delivery or pickup.</td>
+          <td class="qual">A SideChef profile, then Walmart's own cart. Two products, not one storefront.</td>
+        </tr>
+        <tr>
+          <td><span class="who">HelloFresh</span><span class="where">Global · meal kit, not a grocery cart</span></td>
+          <td class="mark">Yes</td>
+          <td class="mark no">No</td>
+          <td class="mark">Yes</td>
+          <td class="mark partial">Partial</td>
+          <td class="qual">A weekly box of pre-portioned ingredients for the recipes you picked. Plans cover 2 or 4 people. You do not shop a catalog, and you do not get it tonight.</td>
+          <td class="qual">Dietary plans and a weekly menu. Some recipes let you swap or add an ingredient.</td>
+        </tr>
+        <tr>
+          <td><span class="who">Licious</span><span class="where">India · meat and seafood</span></td>
+          <td class="mark partial">Partial</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="mark no">No</td>
+          <td class="qual">Blog recipes and ready-to-cook meat. The prompt is to order the protein, not the whole pantry. Same-day slots for meat and seafood.</td>
+          <td class="qual">Past orders of cuts and ready-to-cook items</td>
+        </tr>
       </tbody>
     </table>
     </div>
-    <p>Same-day delivery is the last column on the chart. None of these four has it. Amazon Fresh is not a row. It was the only app in the set with 2-hour delivery.</p>
-    <figure class="figure">
-      <a href="img/research-comparison.webp"><img src="img/research-comparison.webp" width="2000" height="754" alt="Comparison chart of BigBasket, DMart Ready, Jio, and Grofers. All four have a mobile app and grocery buying. Only BigBasket has a recipe feature. None has same-day delivery."></a>
-      <figcaption>Competitor comparison. Click the image to open it larger. BigBasket is the only one of the four with a recipe feature, and none of them offers same-day delivery.</figcaption>
-    </figure>
+    <p class="note">Qualitative comparison of recipe-to-cart and delivery. Yes, Partial, or No. No market-share or usage figures.</p>
+
+    <h3>What this meant for Fresh</h3>
+    <div class="grid g3">
+      <div class="card"><h3>Minutes, and no dish</h3><p>Instamart, Zepto, Blinkit, and Dunzo Daily could beat a 2-hour window. None of them started from a recipe, so speed did not answer what to cook or which ingredients to buy.</p></div>
+      <div class="card"><h3>A cookbook, then a wait</h3><p>BigBasket was the India app in the original set with recipes, a serving quantity, and Shop ingredients. The order was still slotted, and the express shop did not carry the cookbook. DMart Ready and JioMart had no recipe-to-cart at all.</p></div>
+      <div class="card"><h3>The recipe and the cart split</h3><p>SideChef scaled servings and swapped products, then handed the list to Walmart. Instacart added a partner recipe's ingredients from the publisher's page. HelloFresh ships a weekly box. Licious sells the protein, not the pantry.</p></div>
+    </div>
+    <div class="callout">The opening for Fresh is the loop none of these quite closed: a recipe chosen for how people cook in India, scaled to the people eating, with anything already at home left out, landing in a cart that can arrive in about two hours.</div>
 
     <h3>BigBasket's bb cookbook</h3>
-    <p>BigBasket was the proof that recipe shopping already existed, and also the proof that it was not enough. The cookbook has a homepage of collections, search, a recipe page with a serving control and a Shop ingredients button, and a catalogue menu. It does not offer same-day delivery, and that is the shortfall, on delivery time and on the experience, that I was designing past. Click any screenshot to open the full capture.</p>
+    <p>BigBasket was the proof that recipe shopping already existed, and also the proof that it was not enough. The cookbook has a homepage of collections, search, a recipe page with a serving control and a Shop ingredients button, and a catalogue menu. What it did not give you was Fresh's about-2-hour cart. Click any screenshot to open the full capture.</p>
     <div class="film">
       <figure class="figure">
         <a href="img/bb-cookbook-homepage.webp"><img src="img/bb-cookbook-homepage.webp" width="219" height="1681" alt="BigBasket bb cookbook homepage, with a monsoon collection and a list of recipes."></a>
@@ -303,7 +473,7 @@ table.wide{min-width:720px}
 </div></section>
 
 <section class="cs-section" id="personas"><div class="wrap">
-  <div class="head"><div class="num">08</div><div><h2>User Personas</h2><p>Three people the feature had to work for. The details below are theirs, from the persona boards.</p></div></div>
+  <div class="head"><div class="num">08</div><div><h2>User Personas</h2><p>Three people the feature had to work for.</p></div></div>
   <div class="body">
     <p>I wrote three personas so the feature was not aimed at one kind of cook. Together they cover the groups in the survey: someone who works, someone who hosts, and a student.</p>
 
@@ -369,13 +539,6 @@ table.wide{min-width:720px}
       </div>
     </article>
 
-    <h3>The persona boards</h3>
-    <p>The original boards, so the portraits and layout sit with the text above.</p>
-    <div class="grid g3">
-      <figure class="figure"><a href="img/persona-ankit.webp"><img src="img/persona-ankit.webp" width="691" height="582" alt="Persona board for Ankit, 25, architect in Ahmedabad."></a><figcaption>Ankit</figcaption></figure>
-      <figure class="figure"><a href="img/persona-sakshi.webp"><img src="img/persona-sakshi.webp" width="691" height="582" alt="Persona board for Sakshi, 29, software engineer in Mumbai."></a><figcaption>Sakshi</figcaption></figure>
-      <figure class="figure"><a href="img/persona-harsh.webp"><img src="img/persona-harsh.webp" width="691" height="582" alt="Persona board for Harsh, 21, design student in Delhi."></a><figcaption>Harsh</figcaption></figure>
-    </div>
   </div>
 </div></section>
 
