@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Shop by Recipe prototype · Amazon Fresh · Suvarna Myneni</title>
-<meta name="description" content="Clickable prototype of the Amazon Fresh Shop by Recipe concept, designed by Suvarna Myneni.">
+<meta name="description" content="Clickable prototype of Shop by Recipe for Amazon Fresh, designed by Suvarna Myneni and used to review the flow before launch.">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -86,7 +87,7 @@ function render(id){
   canvas.style.height=s.h+'px';
   s.hotspots.forEach(h=>{const a=document.createElement('a');a.className='hs';a.href='#'+(h.to[0]=='@'?id:h.to);a.title=h.label;a.setAttribute('aria-label',h.label);
     Object.assign(a.style,{left:h.x+'px',top:h.y+'px',width:h.w+'px',height:h.h+'px'});
-    a.onclick=e=>{e.preventDefault();e.stopPropagation();if(h.to=='@toast'){say('Checkout is outside the scope of this concept prototype.');return}go(h.to,true)};canvas.appendChild(a)});
+    a.onclick=e=>{e.preventDefault();e.stopPropagation();if(h.to=='@toast'){say('Checkout is outside the scope of this prototype.');return}go(h.to,true)};canvas.appendChild(a)});
   screen.scrollTop=0;
   const i=S.indexOf(s);
   cap.innerHTML=`<b>${i+1} / ${S.length} · ${s.name}</b><br>${s.note} <span style="opacity:.7">(${s.hotspots.length} hotspots)</span>`;

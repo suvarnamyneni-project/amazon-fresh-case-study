@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Shop by Recipe for Amazon Fresh — Case Study · Suvarna Myneni</title>
-<meta name="description" content="How I researched and designed Shop by Recipe for Amazon Fresh: a mobile flow that turns a dish you want to cook into a ready-to-buy grocery cart. Case study by Suvarna Myneni.">
+<meta name="description" content="How I led Shop by Recipe for Amazon Fresh from concept to launch: research, flows, and a mobile journey that turns a dish into a ready-to-buy grocery cart. Case study by Suvarna Myneni.">
 <meta property="og:title" content="Shop by Recipe for Amazon Fresh · Suvarna Myneni">
-<meta property="og:description" content="From the survey and competitor review to a filled Fresh cart. UX case study and clickable prototype.">
+<meta property="og:description" content="From the survey and competitor review to launch on Amazon Fresh. UX case study and clickable prototype by Suvarna Myneni.">
 <meta property="og:image" content="img/03-shop-by-recipe-home-thumb.webp">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="case-study.css">
 <style>
 /* Layout only, for tall phone captures and the five-step journey. No palette overrides. */
@@ -31,6 +32,9 @@ table.wide{min-width:720px}
   .pair,.journey{grid-template-columns:1fr}
   .frame img{max-width:100%}
 }
+.cs-nav .wrap{min-width:0}
+.cs-nav .links{min-width:0;flex:1}
+.table-scroll{max-width:100%}
 /* This page only. Shared palette, type, and section structure stay in case-study.css. */
 .body p,.body li,.body ol,.body .callout,.cs-section .head p{max-width:none}
 .process,.grid,.film,.pair,.journey{gap:16px}
@@ -119,22 +123,22 @@ table.wide{min-width:720px}
 <header class="cs-hero"><div class="wrap">
   <div class="eyebrow">Case Study · Amazon · Amazon Fresh</div>
   <h1>Shop by Recipe: cooking first, groceries second</h1>
-  <p class="lede">I designed a way for Amazon Fresh customers to start with a dish they want to make and end with the right ingredients in their cart, ready for 2-hour delivery.</p>
+  <p class="lede">I led Shop by Recipe from concept to launch: a way for Amazon Fresh customers to start with a dish they want to make and end with the right ingredients in their cart, ready for 2-hour delivery.</p>
   <p style="margin-top:18px"><a href="walkthrough.html">Try the clickable prototype</a></p>
   <dl class="meta">
-    <div><dt>Role</dt><dd>UX Designer</dd></div>
-    <div><dt>Timeline</dt><dd>10 months</dd></div>
+    <div><dt>Role</dt><dd>UX Designer, Amazon Development Centre India</dd></div>
+    <div><dt>Timeline</dt><dd>Aug 2020 – Feb 2023</dd></div>
     <div><dt>Team</dt><dd>Product and Engineering Partners</dd></div>
     <div><dt>Platform</dt><dd>Amazon.in mobile, Fresh storefront</dd></div>
     <div><dt>Tools</dt><dd>Figma</dd></div>
-    <div><dt>Scope</dt><dd>Research through high-fidelity prototype</dd></div>
+    <div><dt>Scope</dt><dd>Concept to launch</dd></div>
   </dl>
   <figure class="cs-cover"><img src="img/03-shop-by-recipe-home.webp" alt="Shop by Recipe homepage on Amazon Fresh, with Quick Cooking recipes, a Veg Only toggle, and Shop items buttons."></figure>
 </div></header>
 
 <main>
 <section class="cs-section" id="role"><div class="wrap">
-  <div class="head"><div class="num">01</div><div><h2>My Role</h2><p>I was the designer on Shop by Recipe during my time at Amazon. The work ran from the research through a high-fidelity, clickable prototype.</p></div></div>
+  <div class="head"><div class="num">01</div><div><h2>My Role</h2><p>I was the UX Designer at Amazon Development Centre India from August 2020 to February 2023. I led customer experience for Amazon Food and Fresh, and I led Shop by Recipe from concept to launch.</p></div></div>
   <div class="body">
     <h3>A grocery store that starts with dinner</h3>
     <p>People shopping for groceries online in India wanted one place for three things: curated recipes, the ingredients those recipes need, and same-day delivery. That is the problem I designed for. Most grocery apps are organised the way a supermarket is: aisles, categories, brands. That works when you already have a list. It works less well when the real question is <em>"what is for dinner tonight?"</em>, because then the shopper has to choose a dish somewhere else, write down the ingredients, and search for each one.</p>
@@ -147,21 +151,21 @@ table.wide{min-width:720px}
       <div class="card"><h3>Information architecture</h3><p>Information architecture for recipe discovery: shelves, search, filters and the Veg Only toggle.</p></div>
       <div class="card"><h3>Seven screens</h3><p>Interaction and visual design for all seven screens, built on Amazon's existing mobile patterns, from sketches through wireframes to Figma.</p></div>
       <div class="card"><h3>First-run explainer</h3><p>The first-run explainer that shows new visitors how the feature works.</p></div>
-      <div class="card"><h3>Clickable prototype</h3><p>A high-fidelity, clickable prototype in Figma so the whole idea could be reviewed and demoed end to end, not just described.</p></div>
+      <div class="card"><h3>Clickable prototype</h3><p>A high-fidelity, clickable prototype in Figma so the whole idea could be reviewed and demoed end to end, not just described, before we built it.</p></div>
     </div>
-    <p>I worked alongside product and engineering partners, and I used the prototype as the shared reference for walking through the flow and talking through trade-offs.</p>
-    <p>Status: design concept and high-fidelity prototype. Deliverables: research, flows, 7 mobile screens, and a clickable prototype.</p>
+    <p>I worked alongside product and engineering partners. The prototype was our shared reference for the flow and the trade-offs, and I stayed with the work through launch: integrating the feature with the developers and streamlining checkout.</p>
+    <p>The project itself ran about 10 months inside that role. Status: led from concept to launch. Deliverables: research, flows, 7 mobile screens, a clickable prototype for review, and collaboration with developers through launch. The screens on this page are the Fresh storefront.</p>
   </div>
 </div></section>
 
 <section class="cs-section" id="design"><div class="wrap">
-  <div class="head"><div class="num">02</div><div><h2>Design Process</h2><p>End-to-end, from the survey and competitor review to a clickable Figma prototype.</p></div></div>
+  <div class="head"><div class="num">02</div><div><h2>Design Process</h2><p>End-to-end, from the survey and competitor review to the shipped feature.</p></div></div>
   <div class="body"><div class="process">
     <div class="step"><b>Discover</b><span>Surveyed 48 people who cook and buy groceries, and compared grocery apps on recipe shopping and delivery speed.</span></div>
     <div class="step"><b>Define</b><span>Framed the gap between a dish and a cart, then wrote four personas: Ankit, Sakshi, Harsh, and Meera.</span></div>
     <div class="step"><b>Ideate</b><span>Set the goals, mapped the user flow, and drew the information architecture: two ways in, one recipe page, then the cart.</span></div>
     <div class="step"><b>Prototype</b><span>Sketches, a wireframe-tool pass, then seven high-fidelity screens in Figma on Amazon's mobile patterns.</span></div>
-    <div class="step"><b>Test &amp; Deliver</b><span>A clickable prototype for product and engineering review. A usability test of the checklist is the next step I would still run.</span></div>
+    <div class="step"><b>Test &amp; Deliver</b><span>A clickable prototype for product and engineering review, then close work with developers to integrate the feature and streamline checkout for launch.</span></div>
   </div></div>
 </div></section>
 
@@ -186,7 +190,7 @@ table.wide{min-width:720px}
 </div></section>
 
 <section class="cs-section" id="stakeholders"><div class="wrap">
-  <div class="head"><div class="num">04</div><div><h2>Stakeholders</h2><p>The people the prototype had to make sense for, besides the shopper holding the phone.</p></div></div>
+  <div class="head"><div class="num">04</div><div><h2>Stakeholders</h2><p>The people the design had to make sense for, besides the shopper holding the phone.</p></div></div>
   <div class="body">
     <div class="table-scroll">
     <table>
@@ -199,7 +203,7 @@ table.wide{min-width:720px}
         </tr>
         <tr>
           <td>Product partners</td>
-          <td>A concept they could review as a whole journey, from the Fresh storefront to the cart.</td>
+          <td>A design they could review as a whole journey, from the Fresh storefront to the cart.</td>
           <td>I worked alongside them and used the clickable prototype as the shared reference for walking through the flow and talking through trade-offs.</td>
         </tr>
         <tr>
@@ -819,7 +823,7 @@ table.wide{min-width:720px}
     <div class="card">
       <span class="tag">Clickable prototype</span>
       <h3>Seven screens, hotspots on every card and button</h3>
-      <p>The prototype is how the concept was reviewed and demoed: anyone can tap through the full journey instead of imagining it from static screens. It lives with this case study at walkthrough.html.</p>
+      <p>The prototype is how the design was reviewed with product and engineering before build: anyone can tap through the full journey instead of imagining it from static screens. It lives with this case study at walkthrough.html.</p>
       <p><a href="walkthrough.html">Open the clickable prototype</a></p>
     </div>
   </div>
@@ -897,16 +901,16 @@ table.wide{min-width:720px}
 </div></section>
 
 <section class="cs-section" id="outcome"><div class="wrap">
-  <div class="head"><div class="num">13</div><div><h2>Outcome</h2><p>What the design enables, what I took away, and what I would do next. This stayed a design concept and a high-fidelity prototype.</p></div></div>
+  <div class="head"><div class="num">13</div><div><h2>Outcome</h2><p>What shipped, what I took away, and what I would do next.</p></div></div>
   <div class="body">
-    <h3>What the design enables</h3>
+    <h3>What shipped</h3>
     <div class="grid g2">
       <div class="card"><h3>One tap from ingredients to cart</h3><p>A whole recipe becomes a basket without a single manual search.</p></div>
       <div class="card"><h3>Clearer recipe discovery</h3><p>Occasion-based shelves, search, filters, and the Veg Only toggle help people find a dish that fits the moment.</p></div>
       <div class="card"><h3>Fewer missed items</h3><p>The ingredient checklist makes it obvious what is going in the basket and what has been left out, which is the extra-trip problem from the survey.</p></div>
       <div class="card"><h3>A reusable recipe card pattern</h3><p>The same card, with chef, rating, time, diet marker and Shop items, works on the storefront, the recipe homepage and search.</p></div>
     </div>
-    <p>Just as important, the clickable prototype made the concept easy to review and demo: anyone could tap through the full journey instead of imagining it from static screens.</p>
+    <p>Before build, the clickable prototype made the design easy to review with product and engineering: anyone could tap through the full journey instead of imagining it from static screens. I then worked with the developers to integrate the feature and streamline checkout for launch.</p>
 
     <h3 id="reflection">What I took away</h3>
     <p><b>The research decided the shelves and the delivery promise.</b> Quick Cooking is a homepage shelf because 73% asked for more of those meals, not because it looked good in a grid. 2-hour delivery is in the explainer because 95.8% wanted recipe shopping at that speed.</p>
@@ -927,30 +931,46 @@ table.wide{min-width:720px}
       <div class="card"><h3>Recipe collections</h3><p>Let people save recipes into their own groups, such as healthy recipes, kids' recipes, or desserts, and come back to them without searching again.</p></div>
     </div>
     <p>The first row is the next round of design work on the flow that exists. The second row is the later scope: a random picker, voice directions, and collections.</p>
-    <p>Case study and design by <b>Suvarna Myneni</b>, UX Designer. The screens are from the Figma prototype for Amazon Fresh Shop by Recipe, along with the research, personas, user flow, information architecture, and wireframes.</p>
+    <p>Case study and design by <b>Suvarna Myneni</b>, UX Designer at Amazon Development Centre India. The screens are from the Figma design for Shop by Recipe on Amazon Fresh, along with the research, personas, user flow, information architecture, and wireframes.</p>
   </div>
 </div></section>
 
 <section class="cs-section" id="metrics"><div class="wrap">
-  <div class="head"><div class="num">14</div><div><h2>Metrics</h2><p>What the survey measured, and the targets I would use for the feature.</p></div></div>
+  <div class="head"><div class="num">14</div><div><h2>Metrics</h2><p>What launched with Shop by Recipe, what the Food and Fresh discovery redesign measured, and what the survey recorded.</p></div></div>
   <div class="body">
+    <h3>Shop by Recipe, after launch</h3>
+    <p>These are the results recorded for Shop by Recipe after launch. They are not the discovery-redesign numbers below.</p>
+    <div class="grid g3">
+      <div class="metric"><div class="v">35%</div><div class="l">Increase in ingredient bundle sales</div><div class="n">Result</div></div>
+      <div class="metric"><div class="v">20%</div><div class="l">Reduction in cart abandonment</div><div class="n">Result</div></div>
+      <div class="metric"><div class="v">90%</div><div class="l">Positive user feedback, praising the feature for saving time and adding convenience</div><div class="n">Result</div></div>
+    </div>
+
+    <h3>Food and Fresh discovery redesign</h3>
+    <p>I also redesigned Food and Fresh discovery from customer research, behavioural insights, and usability testing. These two results belong to that redesign. They are not Shop by Recipe results.</p>
+    <div class="grid g2">
+      <div class="metric"><div class="v">+40%</div><div class="l">App usage, from the Food and Fresh discovery redesign</div><div class="n">Measured · discovery redesign</div></div>
+      <div class="metric"><div class="v">+25%</div><div class="l">Average order value, from the Food and Fresh discovery redesign</div><div class="n">Measured · discovery redesign</div></div>
+    </div>
+
+    <h3>What the survey measured</h3>
     <div class="grid g4">
-      <div class="metric"><div class="v">48</div><div class="l">People surveyed, aged 18 to 55</div><div class="n">Measured</div></div>
-      <div class="metric"><div class="v">95.8%</div><div class="l">Preferred shopping for recipe ingredients with 2-hour delivery</div><div class="n">Measured</div></div>
-      <div class="metric"><div class="v">73%</div><div class="l">Want more Quick Cooking meal options</div><div class="n">Measured</div></div>
-      <div class="metric"><div class="v">67%</div><div class="l">Find offline shopping time consuming</div><div class="n">Measured</div></div>
+      <div class="metric"><div class="v">48</div><div class="l">People surveyed, aged 18 to 55</div><div class="n">Research</div></div>
+      <div class="metric"><div class="v">95.8%</div><div class="l">Preferred shopping for recipe ingredients with 2-hour delivery</div><div class="n">Research</div></div>
+      <div class="metric"><div class="v">73%</div><div class="l">Want more Quick Cooking meal options</div><div class="n">Research</div></div>
+      <div class="metric"><div class="v">67%</div><div class="l">Find offline shopping time consuming</div><div class="n">Research</div></div>
     </div>
     <div class="grid g2">
-      <div class="metric"><div class="v">58.3%</div><div class="l">Find it difficult to choose recipes online</div><div class="n">Measured</div></div>
-      <div class="metric"><div class="v">60 / 50</div><div class="l">Healthy Meals and Veg Meals, from the survey</div><div class="n">Measured</div></div>
+      <div class="metric"><div class="v">58.3%</div><div class="l">Find it difficult to choose recipes online</div><div class="n">Research</div></div>
+      <div class="metric"><div class="v">60 / 50</div><div class="l">Healthy Meals and Veg Meals, from the survey</div><div class="n">Research</div></div>
     </div>
-    <h3>How I would measure the feature</h3>
-    <p>These are the success measures I named while designing. I did not set a numeric goal for any of them, and the prototype was not instrumented, so none is shown as a result.</p>
+    <h3>How I would measure Shop by Recipe next</h3>
+    <p>These are success measures I named while designing. I did not set a numeric goal for any of them, and they were not measured on the prototype, so each one stays intended.</p>
     <div class="grid g2">
-      <div class="card"><span class="tag">Target</span><h3>Recipe-to-cart conversion</h3><p>How often viewing a recipe leads to its ingredients landing in the cart.</p></div>
-      <div class="card"><span class="tag">Target</span><h3>Basket completeness</h3><p>Whether shoppers get everything a dish needs, without missing items.</p></div>
-      <div class="card"><span class="tag">Target</span><h3>Repeat recipe shopping</h3><p>Whether people come back and shop from recipes again.</p></div>
-      <div class="card"><span class="tag">Target</span><h3>Time to build a cart</h3><p>How quickly someone goes from choosing a dish to a ready basket.</p></div>
+      <div class="card"><span class="tag">Intended</span><h3>Recipe-to-cart conversion</h3><p>How often viewing a recipe leads to its ingredients landing in the cart.</p></div>
+      <div class="card"><span class="tag">Intended</span><h3>Basket completeness</h3><p>Whether shoppers get everything a dish needs, without missing items.</p></div>
+      <div class="card"><span class="tag">Intended</span><h3>Repeat recipe shopping</h3><p>Whether people come back and shop from recipes again.</p></div>
+      <div class="card"><span class="tag">Intended</span><h3>Time to build a cart</h3><p>How quickly someone goes from choosing a dish to a ready basket.</p></div>
     </div>
   </div>
 </div></section>
