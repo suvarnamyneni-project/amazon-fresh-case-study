@@ -2,8 +2,8 @@
 
 Case study and clickable prototype by **Suvarna Myneni**, Senior Product / UX Designer.
 
-- Case study: https://suvarnamyneni-project.github.io/amazon-fresh-case-study/
-- Prototype: https://suvarnamyneni-project.github.io/amazon-fresh-case-study/walkthrough.html
+- Case study: https://suvarnamyneni.github.io/amazon-fresh-case-study/
+- Prototype: https://suvarnamyneni.github.io/amazon-fresh-case-study/walkthrough.html
 - Original project page: https://motiveux.wixsite.com/amazon-fresh
 
 Static HTML/CSS/JS, no build step. Final screens are WebP exports from Figma. Hotspots are defined in `screens.js`.
