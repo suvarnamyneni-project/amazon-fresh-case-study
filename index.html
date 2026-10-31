@@ -14,14 +14,14 @@
 .cs-cover img{width:min(100%,420px);height:640px;object-fit:cover;object-position:top}
 .frame{max-height:680px;overflow:auto}
 .frame img{width:100%;max-width:375px;height:auto;margin-inline:auto}
-.pair{display:grid;grid-template-columns:minmax(180px,300px) 1fr;gap:28px;align-items:start}
+.pair{display:grid;grid-template-columns:minmax(180px,300px) 1fr;gap:16px;align-items:start}
 .film{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;align-items:start}
 .film figure{margin:0}
 .film img{width:auto;max-width:100%;max-height:440px;height:auto}
 .table-scroll{overflow-x:auto}
 table.wide{min-width:720px}
 .ia ul{margin-top:6px}
-.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .journey img{width:100%;height:148px;object-fit:cover;object-position:top}
 @media (max-width:900px){
   .pair,.journey{grid-template-columns:1fr 1fr}
@@ -32,19 +32,46 @@ table.wide{min-width:720px}
   .frame img{max-width:100%}
 }
 /* This page only. Shared palette, type, and section structure stay in case-study.css. */
-.body > h3{margin-top:4px}
-.body > * + h3{margin-top:36px}
+.body p,.body li,.body ol,.body .callout,.cs-section .head p{max-width:none}
+.process,.grid,.film,.pair,.journey{gap:16px}
+.body > * + *{margin-top:24px}
+.body > h3{margin-top:0}
+.body > * + h3{margin-top:40px}
 .body > h3 + p,
 .body > h3 + ul,
+.body > h3 + ol,
 .body > h3 + .legend,
 .body > h3 + .grid,
 .body > h3 + .table-scroll,
 .body > h3 + .callout,
 .body > h3 + .film,
-.body > h3 + .pair{margin-top:12px}
+.body > h3 + .pair,
+.body > h3 + .persona-scroller{margin-top:12px}
 .grid{align-items:stretch}
 .grid > .card{height:100%}
 .film .figure img{margin-inline:auto}
+.persona-bar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.persona-bar p{margin:0;font-size:14px;color:var(--muted)}
+.persona-nav{display:flex;gap:8px}
+.persona-nav button{width:36px;height:36px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:600 18px/1 var(--font-head);cursor:pointer}
+.persona-nav button:hover{border-color:var(--accent);color:var(--accent)}
+.persona-row{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:2px;padding-bottom:14px;scrollbar-width:thin;scrollbar-color:var(--accent) var(--line)}
+.persona-row::-webkit-scrollbar{height:8px}
+.persona-row::-webkit-scrollbar-track{background:var(--line);border-radius:99px}
+.persona-row::-webkit-scrollbar-thumb{background:var(--accent);border-radius:99px}
+.persona-card{flex:0 0 300px;scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:14px}
+.persona-card header{display:flex;align-items:center;gap:14px}
+.persona-card .avatar,.persona-card .initials{width:64px;height:64px;border-radius:50%;flex:none;object-fit:cover}
+.persona-card .initials{display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);font:700 22px/1 var(--font-head)}
+.persona-card h3{margin:0;font-size:18px}
+.persona-card .who-line{margin:2px 0 0;font-size:13px;color:var(--muted)}
+.persona-card blockquote{margin:0;padding:12px 14px;background:var(--accent-soft);border-radius:12px;font-size:15px;line-height:1.45;color:var(--ink);min-height:4.6em}
+.persona-card > div:last-child{margin-top:auto}
+.persona-card h4{margin:0;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.persona-card ul{margin:0;padding-left:18px;font-size:14px;color:var(--ink)}
+.persona-card li+li{margin-top:6px}
+.persona-card .chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0}
+.persona-card .chips li{margin:0;font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:999px}
 #competitive .legend{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;padding:0;max-width:none;font-size:14px;color:var(--muted)}
 #competitive .legend b{color:var(--ink)}
 #competitive .scroll-hint{display:none;font-size:13px;color:var(--muted);max-width:none}
@@ -66,13 +93,13 @@ table.wide{min-width:720px}
 #competitive .note{font-size:14px;color:var(--muted);max-width:none}
 #competitive td.mark.partial{color:var(--ink)}
 #competitive td.mark.no{color:var(--muted);font-weight:500}
-#personas .body > .persona{margin-top:16px}
 @media (max-width:900px){
   #competitive .scroll-hint{display:block}
-  .body > * + h3{margin-top:28px}
+  .body > * + h3{margin-top:32px}
+  .journey{grid-template-columns:1fr 1fr}
 }
 @media (max-width:560px){
-  #personas .persona{gap:14px}
+  .persona-card{flex-basis:min(300px,86%)}
   #competitive table.wide th,
   #competitive table.wide td{padding:12px}
   #competitive table.wide th:first-child,
@@ -95,11 +122,11 @@ table.wide{min-width:720px}
   <p class="lede">I designed a way for Amazon Fresh customers to start with a dish they want to make and end with the right ingredients in their cart, ready for 2-hour delivery.</p>
   <p style="margin-top:18px"><a href="walkthrough.html">Try the clickable prototype</a></p>
   <dl class="meta">
-    <div><dt>Role</dt><dd>Senior Product / UX Designer</dd></div>
+    <div><dt>Role</dt><dd>UX Designer</dd></div>
     <div><dt>Timeline</dt><dd>10 months</dd></div>
-    <div><dt>Team</dt><dd>Product and engineering partners</dd></div>
+    <div><dt>Team</dt><dd>Product and Engineering Partners</dd></div>
     <div><dt>Platform</dt><dd>Amazon.in mobile, Fresh storefront</dd></div>
-    <div><dt>Tools</dt><dd>Figma for design and prototyping</dd></div>
+    <div><dt>Tools</dt><dd>Figma</dd></div>
     <div><dt>Scope</dt><dd>Research through high-fidelity prototype</dd></div>
   </dl>
   <figure class="cs-cover"><img src="img/03-shop-by-recipe-home.webp" alt="Shop by Recipe homepage on Amazon Fresh, with Quick Cooking recipes, a Veg Only toggle, and Shop items buttons."></figure>
@@ -110,12 +137,12 @@ table.wide{min-width:720px}
   <div class="head"><div class="num">01</div><div><h2>My Role</h2><p>I was the designer on Shop by Recipe during my time at Amazon. The work ran from the research through a high-fidelity, clickable prototype.</p></div></div>
   <div class="body">
     <h3>A grocery store that starts with dinner</h3>
-    <p>People shopping for groceries online in India wanted one place for three things: curated recipes, the ingredients those recipes need, and same-day delivery. That is the problem I designed for. Most grocery apps are organised the way a supermarket is: aisles, categories, brands. That works when you already have a list. It works less well when the real question is <em>"what are we eating tonight?"</em>, because then the shopper has to choose a dish somewhere else, write down the ingredients, and search for each one.</p>
+    <p>People shopping for groceries online in India wanted one place for three things: curated recipes, the ingredients those recipes need, and same-day delivery. That is the problem I designed for. Most grocery apps are organised the way a supermarket is: aisles, categories, brands. That works when you already have a list. It works less well when the real question is <em>"what is for dinner tonight?"</em>, because then the shopper has to choose a dish somewhere else, write down the ingredients, and search for each one.</p>
     <p>Shop by Recipe puts that whole loop inside Amazon Fresh. Customers browse recipes from well-known chefs, pick how many people they are cooking for, leave out anything already in the kitchen, and send the rest to the cart in one tap. The recipes are curated for the range of food people actually cook in India, so trying something new does not mean leaving the store to figure out the shopping.</p>
     <p>This page is the research and the design together: the competitor review, the survey, the personas, the flow, the information architecture, the wireframes, and then the screens. Every final screen is also linked in the <a href="walkthrough.html">clickable prototype</a>.</p>
     <h3>What I owned</h3>
     <div class="grid g3">
-      <div class="card"><h3>Problem framing</h3><p>Framing the problem from the research: a survey of 48 people, a look at other grocery apps, and three personas.</p></div>
+      <div class="card"><h3>Problem framing</h3><p>Framing the problem from the research: a survey of 48 people, a look at other grocery apps, and four personas.</p></div>
       <div class="card"><h3>End-to-end journey</h3><p>The end-to-end journey, from the Fresh storefront to the cart, including the user flow and information architecture.</p></div>
       <div class="card"><h3>Information architecture</h3><p>Information architecture for recipe discovery: shelves, search, filters and the Veg Only toggle.</p></div>
       <div class="card"><h3>Seven screens</h3><p>Interaction and visual design for all seven screens, built on Amazon's existing mobile patterns, from sketches through wireframes to Figma.</p></div>
@@ -131,7 +158,7 @@ table.wide{min-width:720px}
   <div class="head"><div class="num">02</div><div><h2>Design Process</h2><p>End-to-end, from the survey and competitor review to a clickable Figma prototype.</p></div></div>
   <div class="body"><div class="process">
     <div class="step"><b>Discover</b><span>Surveyed 48 people who cook and buy groceries, and compared grocery apps on recipe shopping and delivery speed.</span></div>
-    <div class="step"><b>Define</b><span>Framed the gap between a dish and a cart, then wrote three personas: Ankit, Sakshi, and Harsh.</span></div>
+    <div class="step"><b>Define</b><span>Framed the gap between a dish and a cart, then wrote four personas: Ankit, Sakshi, Harsh, and Meera.</span></div>
     <div class="step"><b>Ideate</b><span>Set the goals, mapped the user flow, and drew the information architecture: two ways in, one recipe page, then the cart.</span></div>
     <div class="step"><b>Prototype</b><span>Sketches, a wireframe-tool pass, then seven high-fidelity screens in Figma on Amazon's mobile patterns.</span></div>
     <div class="step"><b>Test &amp; Deliver</b><span>A clickable prototype for product and engineering review. A usability test of the checklist is the next step I would still run.</span></div>
@@ -152,8 +179,8 @@ table.wide{min-width:720px}
     <ul>
       <li>People start from the meal. 67% of the people I surveyed find offline grocery shopping time consuming, and 58.3% find it difficult to choose recipes online.</li>
       <li>A recipe is already a shopping list. The common story was missing one or two ingredients for an elaborate dish and making an extra trip.</li>
-      <li>How much to buy depends on who is eating. Ankit needs enough for one person and cannot afford waste. Sakshi shops for a party.</li>
-      <li>95.8% said they would rather shop for recipe ingredients with 2-hour delivery. Fresh was the only grocery app in the set I reviewed that already delivered in two hours, so the feature belonged there.</li>
+      <li>How much to buy depends on who is eating. Ankit needs enough for one person and cannot afford waste. Sakshi shops for a party. Meera cooks for a family of four on a weeknight.</li>
+      <li>95.8% said they would rather shop for recipe ingredients with 2-hour delivery, so I designed the feature for Fresh, which already promised that speed.</li>
     </ul>
   </div>
 </div></section>
@@ -168,7 +195,7 @@ table.wide{min-width:720px}
         <tr>
           <td>Amazon Fresh shoppers</td>
           <td>A way to start from a meal, skip what is already at home, and have the rest arrive in time to cook.</td>
-          <td>A survey of 48 people who cook and buy groceries, then three personas and three stories that the flow had to cover.</td>
+          <td>A survey of 48 people who cook and buy groceries, then four personas and three stories that the flow had to cover.</td>
         </tr>
         <tr>
           <td>Product partners</td>
@@ -194,7 +221,7 @@ table.wide{min-width:720px}
 <section class="cs-section" id="users"><div class="wrap">
   <div class="head"><div class="num">05</div><div><h2>End Users</h2><p>Students, employees, and homemakers who cook and buy the groceries. The survey was 48 people, aged 18 to 55.</p></div></div>
   <div class="body">
-    <p>The chart describes them as people who actively buy groceries online or offline for their house. The same working file has three short stories, one for each group. The names are not the persona names. I kept them as I wrote them.</p>
+    <p>I wrote three short stories for the groups in the survey: someone who works, a student away from home, and a homemaker.</p>
     <div class="grid g3">
       <article class="card">
         <span class="tag">Working employees</span>
@@ -207,15 +234,15 @@ table.wide{min-width:720px}
         <span class="tag">Students staying away from home</span>
         <h3>Anjali</h3>
         <p><b>Background.</b> Anjali lives in Mumbai with a group of 3 friends completing their Graduation.</p>
-        <p><b>Pain point.</b> She plans to make a special Italian lunch the next day for her room mate but she realises she does not know which recipe would work best.</p>
-        <p><b>Solution.</b> She opens Amazon Fresh to search and finds the recipe in a jiffy like last time which turned out amazing. Anjali can focus on her studies while getting an easy recipe and required ingredients at home.</p>
+        <p><b>Pain point.</b> Anjali plans a special Italian lunch the next day for a room mate, then realises the right recipe is not obvious.</p>
+        <p><b>Solution.</b> Anjali opens Amazon Fresh, finds the recipe the way a previous search did, and gets the ingredients at home while studying.</p>
       </article>
       <article class="card">
         <span class="tag">Homemaker hosting a party</span>
         <h3>Rama</h3>
         <p><b>Background.</b> Rama is a homemaker in Delhi, who has a party at home in the evening.</p>
-        <p><b>Pain point.</b> Being busy in her daily routine it slipped from her mind about the guests coming over. So her son suggests searching for quick appetizers online and ordering all the ingredients required easily from Amazon Fresh.</p>
-        <p><b>Solution.</b> The ingredients are delivered by afternoon so she has ample time to clean and prepare food.</p>
+        <p><b>Pain point.</b> A busy day pushes the guests out of mind. Rama's son suggests searching for quick appetizers and ordering the ingredients from Amazon Fresh.</p>
+        <p><b>Solution.</b> The ingredients arrive by afternoon, so Rama has time to clean and cook.</p>
       </article>
     </div>
   </div>
@@ -226,13 +253,13 @@ table.wide{min-width:720px}
   <div class="body">
     <div class="grid g2">
       <div class="card"><span class="tag">Survey</span><h3>48 people who cook and buy groceries</h3><p>Aged 18 to 55: students, employees, and homemakers. I asked what they thought of offline grocery shopping, which features they wanted, whether recipes are easy to find, how often they lack an ingredient, and how likely they were to use a same-day feature that covered those gaps.</p></div>
-      <div class="card"><span class="tag">Competitive review</span><h3>Recipe shopping, and how fast the groceries arrive</h3><p>The first pass compared BigBasket, DMart Ready, Jio, and Grofers on a mobile app, grocery buying, a recipe feature, and same-day delivery. Fresh was the only app in that set with 2-hour delivery. Competitive analysis keeps those four and sets them next to other grocery and recipe-to-cart services.</p></div>
+      <div class="card"><span class="tag">Competitive review</span><h3>Recipe shopping, and how fast the groceries arrive</h3><p>I compared BigBasket, DMart Ready, and Grofers on a mobile app, grocery buying, a recipe feature, and same-day delivery. Fresh already offered about 2-hour delivery. The competitive section sets that set next to other grocery and recipe-to-cart services.</p></div>
       <div class="card"><span class="tag">Insight synthesis</span><h3>The missing ingredient is the whole problem</h3><p>When people cook something elaborate, they are often short one or two ingredients and make another trip. Shop by Recipe is for seeing the dish, seeing what is missing, and having just those items arrive in time to cook.</p></div>
-      <div class="card"><span class="tag">Personas</span><h3>Three cooks, not one</h3><p>Ankit, Sakshi, and Harsh, written so the feature was not aimed at one kind of cook: someone who works, someone who hosts, and a student. Their cards are in User personas.</p></div>
+      <div class="card"><span class="tag">Personas</span><h3>Four cooks, not one</h3><p>Ankit, Sakshi, Harsh, and Meera, so the feature was not aimed at one kind of cook: someone who works, someone who hosts, a student, and a parent. The cards are in User personas.</p></div>
     </div>
 
     <h3 id="survey">48 people who cook and buy the groceries</h3>
-    <p>I surveyed 48 people, aged 18 to 55. They were students, employees, and homemakers who cook and buy groceries. The chart describes them as people who actively buy groceries online or offline for their house.</p>
+    <p>I surveyed 48 people, aged 18 to 55. They were students, employees, and homemakers who cook and buy groceries for the house.</p>
     <p>I asked about:</p>
     <ul>
       <li>Their thoughts on offline grocery shopping.</li>
@@ -243,15 +270,10 @@ table.wide{min-width:720px}
     </ul>
     <div class="grid g2">
       <div class="card"><h3>95.8%</h3><p>preferred shopping for recipe ingredients with 2-hour delivery.</p></div>
-      <div class="card"><h3>73%</h3><p>want more Quick Cooking meal options. The bar is also labeled 73.</p></div>
+      <div class="card"><h3>73%</h3><p>want more Quick Cooking meal options.</p></div>
       <div class="card"><h3>67%</h3><p>find offline shopping time consuming.</p></div>
       <div class="card"><h3>58.3%</h3><p>find it difficult to choose recipes online.</p></div>
     </div>
-    <p>Three bars have numbers printed on them: Quick Cooking 73, Healthy Meals 60, Veg Meals 50. The chart also draws three shorter bars with no printed value and no name, so I have not turned those into figures. 60 and 50 are shown as printed. Only the Quick Cooking callout is written as a percent, 73%.</p>
-    <figure class="figure">
-      <a href="img/research-survey.webp"><img src="img/research-survey.webp" width="1100" height="619" alt="Survey chart. 48 people aged 18 to 55 who buy groceries online or offline for their house. Bars: Quick Cooking 73, Healthy Meals 60, Veg Meals 50, and three shorter unlabeled bars. Callouts: 73 percent want more Quick Cooking meal options, 67 percent find offline shopping time consuming, 58.3 percent find it difficult to choose recipes online."></a>
-      <figcaption>The survey chart. Click the image to open it larger. 95.8% is stated in the write-up of the study. It is not printed on this image.</figcaption>
-    </figure>
 
     <h3 id="insights">The missing ingredient is the whole problem</h3>
     <p>One thing people kept coming back to: when they cook something elaborate, they are often short one or two ingredients. Then they have to make another trip to the store. That single gap is what Shop by Recipe is for. You should be able to see the dish, see what you are missing, and have just those items arrive in time to cook.</p>
@@ -265,7 +287,7 @@ table.wide{min-width:720px}
     </ul>
     <figure class="figure">
       <a href="img/research-insights.webp"><img src="img/research-insights.webp" width="1100" height="619" alt="Five survey insights: most people follow recipes online; about half buy groceries from Amazon Fresh; most people have insufficient ingredients at least once a week; almost everyone would like to shop ingredients from a favorite chef's recipes; most people want more Quick Cooking and Calorie Conscious options."></a>
-      <figcaption>Insight board from the survey. Click the image to open it larger. The wording above is taken from this image. "About half" is how the board puts the Fresh figure. It does not print a percent.</figcaption>
+      <figcaption>Insight board from the survey.</figcaption>
     </figure>
   </div>
 </div></section>
@@ -273,8 +295,8 @@ table.wide{min-width:720px}
 <section class="cs-section" id="competitive"><div class="wrap">
   <div class="head"><div class="num">07</div><div><h2>Competitive Analysis</h2><p>Who already sold recipes, and who could deliver them.</p></div></div>
   <div class="body">
-    <p>I compared grocery apps on two things that mattered for this feature: whether you could shop from a recipe, and how fast the groceries arrived. The first pass was BigBasket, DMart Ready, Jio, and Grofers. BigBasket's bb cookbook was the only recipe feature in that set, and it still fell short of a 2-hour trip from a dish to a basket. Fresh was the app that could offer that delivery.</p>
-    <p>The survey is what made the delivery gap decisive. 95.8% of participants preferred shopping for recipe ingredients with 2-hour delivery. The table keeps those four and sets them next to other grocery and recipe-to-cart services that were live in India and globally while this was designed. Marks are qualitative. There are no share or usage figures.</p>
+    <p>I compared grocery apps on two things that mattered for this feature: whether you could shop from a recipe, and how fast the groceries arrived. BigBasket, DMart Ready, and Grofers were the first set. BigBasket's bb cookbook was the only recipe feature among them, and it still fell short of a 2-hour trip from a dish to a basket. Fresh could offer that delivery.</p>
+    <p>The survey is what made the delivery gap decisive. 95.8% of participants preferred shopping for recipe ingredients with 2-hour delivery. The table sets those grocery apps next to other recipe-to-cart services that were live in India and globally while this was designed.</p>
     <ul class="legend">
       <li><b>Yes</b> — the capability was part of the product</li>
       <li><b>Partial</b> — a limited version, or split across two products</li>
@@ -305,7 +327,7 @@ table.wide{min-width:720px}
           <td class="qual">Past purchases and recommendations already in Fresh</td>
         </tr>
         <tr>
-          <td><span class="who">BigBasket</span><span class="where">India · kept from the original set</span></td>
+          <td><span class="who">BigBasket</span><span class="where">India</span></td>
           <td class="mark">Yes</td>
           <td class="mark">Yes</td>
           <td class="mark">Yes</td>
@@ -314,22 +336,13 @@ table.wide{min-width:720px}
           <td class="qual">Store recommendations. Cookbook shelves were editorial collections.</td>
         </tr>
         <tr>
-          <td><span class="who">DMart Ready</span><span class="where">India · kept from the original set</span></td>
+          <td><span class="who">DMart Ready</span><span class="where">India</span></td>
           <td class="mark no">No</td>
           <td class="mark no">No</td>
           <td class="mark no">No</td>
           <td class="mark no">No</td>
           <td class="qual">A chosen slot for home delivery, or free pickup from a DMart Ready point. Not a 2-hour recipe promise.</td>
           <td class="qual">Little beyond the basket you build</td>
-        </tr>
-        <tr>
-          <td><span class="who">JioMart (Jio)</span><span class="where">India · kept from the original set</span></td>
-          <td class="mark no">No</td>
-          <td class="mark no">No</td>
-          <td class="mark no">No</td>
-          <td class="mark no">No</td>
-          <td class="qual">Scheduled home delivery, same day in some pin codes and next day in others. Not a minutes-scale service, and no in-app cookbook.</td>
-          <td class="qual">Reorder and offers</td>
         </tr>
         <tr>
           <td><span class="who">Blinkit (Grofers)</span><span class="where">India · Grofers, then Blinkit</span></td>
@@ -339,15 +352,6 @@ table.wide{min-width:720px}
           <td class="mark no">No</td>
           <td class="qual">Scheduled grocery as Grofers, then about 10 minutes after the rebrand to Blinkit. Still no recipe-to-cart.</td>
           <td class="qual">Reorder</td>
-        </tr>
-        <tr>
-          <td><span class="who">Swiggy Instamart</span><span class="where">India</span></td>
-          <td class="mark no">No</td>
-          <td class="mark no">No</td>
-          <td class="mark no">No</td>
-          <td class="mark no">No</td>
-          <td class="qual">About 15–30 minutes for a dark-store grocery list, in the cities it had opened. No path from a dish to a cart.</td>
-          <td class="qual">Reorder inside Swiggy</td>
         </tr>
         <tr>
           <td><span class="who">Zepto</span><span class="where">India</span></td>
@@ -366,15 +370,6 @@ table.wide{min-width:720px}
           <td class="mark no">No</td>
           <td class="qual">About 19 minutes for a short catalog of daily groceries, first in Bengaluru. Not a recipe shop.</td>
           <td class="qual">Popular local lists, not recipes</td>
-        </tr>
-        <tr>
-          <td><span class="who">Instacart</span><span class="where">Global · shoppable recipes</span></td>
-          <td class="mark partial">Partial</td>
-          <td class="mark">Yes</td>
-          <td class="mark no">No</td>
-          <td class="mark partial">Partial</td>
-          <td class="qual">Same-day grocery, often within hours. Shoppable recipes lived on partner pages (TikTok, Tasty, Hearst) and added that recipe's quantities.</td>
-          <td class="qual">Past orders and store suggestions. Replacements cover a missing grocery item, not a recipe swap.</td>
         </tr>
         <tr>
           <td><span class="who">Walmart+ via SideChef</span><span class="where">Global · shoppable recipes</span></td>
@@ -406,13 +401,12 @@ table.wide{min-width:720px}
       </tbody>
     </table>
     </div>
-    <p class="note">Qualitative comparison of recipe-to-cart and delivery. Yes, Partial, or No. No market-share or usage figures.</p>
 
     <h3>What this meant for Fresh</h3>
     <div class="grid g3">
-      <div class="card"><h3>Minutes, and no dish</h3><p>Instamart, Zepto, Blinkit, and Dunzo Daily could beat a 2-hour window. None of them started from a recipe, so speed did not answer what to cook or which ingredients to buy.</p></div>
-      <div class="card"><h3>A cookbook, then a wait</h3><p>BigBasket was the India app in the original set with recipes, a serving quantity, and Shop ingredients. The order was still slotted, and the express shop did not carry the cookbook. DMart Ready and JioMart had no recipe-to-cart at all.</p></div>
-      <div class="card"><h3>The recipe and the cart split</h3><p>SideChef scaled servings and swapped products, then handed the list to Walmart. Instacart added a partner recipe's ingredients from the publisher's page. HelloFresh ships a weekly box. Licious sells the protein, not the pantry.</p></div>
+      <div class="card"><h3>Minutes, and no dish</h3><p>Zepto, Blinkit, and Dunzo Daily could beat a 2-hour window. None of them started from a recipe, so speed did not answer what to cook or which ingredients to buy.</p></div>
+      <div class="card"><h3>A cookbook, then a wait</h3><p>BigBasket was the India app in the first set with recipes, a serving quantity, and Shop ingredients. The order was still slotted, and the express shop did not carry the cookbook. DMart Ready had no recipe-to-cart at all.</p></div>
+      <div class="card"><h3>The recipe and the cart split</h3><p>SideChef scaled servings and swapped products, then handed the list to Walmart. HelloFresh ships a weekly box. Licious sells the protein, not the pantry.</p></div>
     </div>
     <div class="callout">The opening for Fresh is the loop none of these quite closed: a recipe chosen for how people cook in India, scaled to the people eating, with anything already at home left out, landing in a cart that can arrive in about two hours.</div>
 
@@ -442,7 +436,7 @@ table.wide{min-width:720px}
     </div>
 
     <h3>What I kept from Amazon</h3>
-    <p>The same research board held screenshots of Fresh as it already worked: filters on a grocery search, the Fresh menu, and the shop-items cart. I treated these as the patterns to reuse, so Shop by Recipe would feel like Fresh and not like a second app.</p>
+    <p>I also kept screenshots of Fresh as it already worked: filters on a grocery search, the Fresh menu, and the shop-items cart. I treated these as the patterns to reuse, so Shop by Recipe would feel like Fresh and not like a second app.</p>
     <div class="film">
       <figure class="figure">
         <a href="img/amazon-filters-categories.webp"><img src="img/amazon-filters-categories.webp" width="230" height="461" alt="Amazon grocery search filters, with category choices, clear filters, and a results button."></a>
@@ -462,83 +456,173 @@ table.wide{min-width:720px}
       </figure>
       <figure class="figure">
         <a href="img/amazon-shop-items-long.webp"><img src="img/amazon-shop-items-long.webp" width="262" height="780" alt="A longer Amazon Fresh cart listing several grocery products with quantity and delete controls."></a>
-        <figcaption>Shop items, a longer basket from the same board, with the same cart controls.</figcaption>
+        <figcaption>A longer Fresh basket, with the same cart controls.</figcaption>
       </figure>
       <figure class="figure">
-        <a href="img/research-chefs.webp"><img src="img/research-chefs.webp" width="289" height="206" alt="Unlabeled photograph from the research board showing four chefs in front of cauliflower and bell peppers."></a>
-        <figcaption>An unlabeled photo of chefs and produce on the same research board.</figcaption>
+        <a href="img/research-chefs.webp"><img src="img/research-chefs.webp" width="289" height="206" alt="Four chefs in front of cauliflower and bell peppers."></a>
+        <figcaption>Chefs and produce from the research.</figcaption>
       </figure>
     </div>
   </div>
 </div></section>
 
 <section class="cs-section" id="personas"><div class="wrap">
-  <div class="head"><div class="num">08</div><div><h2>User Personas</h2><p>Three people the feature had to work for.</p></div></div>
+  <div class="head"><div class="num">08</div><div><h2>User Personas</h2><p>Four people the feature had to work for.</p></div></div>
   <div class="body">
-    <p>I wrote three personas so the feature was not aimed at one kind of cook. Together they cover the groups in the survey: someone who works, someone who hosts, and a student.</p>
-
-    <article class="card persona">
-      <img class="avatar" src="img/persona-ankit-avatar.webp" width="151" height="151" alt="Portrait of Ankit, a man in a yellow jacket.">
-      <div>
-        <h3>Ankit, architect</h3>
-        <p>Male · 25 · Architect. Ankit is a full time architect and has recently shifted to Ahmedabad and lives on rent. Currently, Ankit knows how to cook food for himself but does not have the time to go out and buy groceries.</p>
-        <h3>Goals</h3>
-        <ul>
-          <li>Easy Management of grocery</li>
-          <li>Finding good and tried recipes quickly</li>
-          <li>To prevent wastage, needs enough quantity to serve one person</li>
-          <li>Timely delivery of groceries</li>
-        </ul>
-        <h3>Pain points</h3>
-        <ul>
-          <li>Struggles to find time to buy groceries after work.</li>
-          <li>Decides on a recipe but does not have ingredients at the last moment.</li>
-          <li>Requires recipes and groceries adequate for only 1 person. Cannot afford wastage.</li>
-        </ul>
+    <p>I wrote four personas so the feature was not aimed at one kind of cook. Together they cover someone who works, someone who hosts, a student, and a parent cooking weeknight dinner.</p>
+    <div class="persona-scroller">
+      <div class="persona-bar">
+        <p>Scroll sideways for all four.</p>
+        <div class="persona-nav">
+          <button type="button" data-persona-scroll="-1" aria-label="Previous persona">←</button>
+          <button type="button" data-persona-scroll="1" aria-label="Next persona">→</button>
+        </div>
       </div>
-    </article>
-
-    <article class="card persona">
-      <img class="avatar" src="img/persona-sakshi-avatar.webp" width="151" height="151" alt="Portrait of Sakshi, a woman in a red sweater sitting on a couch.">
-      <div>
-        <h3>Sakshi, software engineer</h3>
-        <p>Female · 29 · Software Engineer. Sakshi is a full time employee in the IT field. She lives in Mumbai with her husband. She enjoys cooking exotic dishes and loves to host parties during weekends.</p>
-        <h3>Goals</h3>
-        <ul>
-          <li>Bulk management of grocery</li>
-          <li>Needs fresh exotic vegetables to experiment and cook</li>
-          <li>Requires time to clean and prepare other things for the party</li>
-          <li>Needs groceries on the same day for last minute parties</li>
-        </ul>
-        <h3>Pain points</h3>
-        <ul>
-          <li>Needs to buy and carry bulk groceries offline, after work</li>
-          <li>Exotic vegetables and ingredients are not easily available in the market near her house.</li>
-          <li>Struggles to find chef recommended recipes for variety in the party.</li>
-        </ul>
+      <div class="persona-row" id="persona-row" tabindex="0" aria-label="Persona cards">
+        <article class="persona-card">
+          <header>
+            <img class="avatar" src="img/persona-ankit-avatar.webp" width="151" height="151" alt="Portrait of Ankit, a man in a yellow jacket.">
+            <div>
+              <h3>Ankit</h3>
+              <p class="who-line">25 · Architect · Ahmedabad</p>
+            </div>
+          </header>
+          <blockquote>I can cook for myself. I cannot spend the evening buying groceries for one.</blockquote>
+          <div>
+            <h4>Goals</h4>
+            <ul>
+              <li>Manage groceries without a trip after work</li>
+              <li>Find a tried recipe quickly</li>
+              <li>Buy enough for one person, and no more</li>
+              <li>Get the order in time to cook</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Frustrations</h4>
+            <ul>
+              <li>No time to shop after work</li>
+              <li>The recipe is chosen, and one ingredient is missing</li>
+              <li>A family-size pack turns into waste</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Habits</h4>
+            <ul class="chips">
+              <li>Cooks for one</li>
+              <li>After work</li>
+              <li>Little waste</li>
+              <li>Shops on the phone</li>
+            </ul>
+          </div>
+        </article>
+        <article class="persona-card">
+          <header>
+            <img class="avatar" src="img/persona-sakshi-avatar.webp" width="151" height="151" alt="Portrait of Sakshi, a woman in a red sweater sitting on a couch.">
+            <div>
+              <h3>Sakshi</h3>
+              <p class="who-line">29 · Software engineer · Mumbai</p>
+            </div>
+          </header>
+          <blockquote>The party is tonight. I still need the ingredients, and the market nearby does not have them.</blockquote>
+          <div>
+            <h4>Goals</h4>
+            <ul>
+              <li>Buy a larger shop in one order</li>
+              <li>Get fresh, less common vegetables to experiment with</li>
+              <li>Keep the evening free for the party, not the market</li>
+              <li>Have groceries the same day</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Frustrations</h4>
+            <ul>
+              <li>Carrying a big shop home after work</li>
+              <li>The nearby market does not stock the vegetables the recipe needs</li>
+              <li>Chef recipes for a party are hard to find, then hard to shop</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Habits</h4>
+            <ul class="chips">
+              <li>Weekend host</li>
+              <li>Exotic ingredients</li>
+              <li>Same-day delivery</li>
+              <li>Bulk shop</li>
+            </ul>
+          </div>
+        </article>
+        <article class="persona-card">
+          <header>
+            <img class="avatar" src="img/persona-harsh-avatar.webp" width="151" height="151" alt="Portrait of Harsh, a young man with glasses smiling outdoors.">
+            <div>
+              <h3>Harsh</h3>
+              <p class="who-line">21 · Design student · Delhi</p>
+            </div>
+          </header>
+          <blockquote>I want something healthy and quick. A long recipe eats the time I should spend studying.</blockquote>
+          <div>
+            <h4>Goals</h4>
+            <ul>
+              <li>More healthy recipes</li>
+              <li>Deals that fit a shared-flat budget</li>
+              <li>Beginner recipes that are quick</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Frustrations</h4>
+            <ul>
+              <li>Losing track of what is already in the kitchen</li>
+              <li>Offline groceries cost more and take longer</li>
+              <li>Elaborate recipes take over study time</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Habits</h4>
+            <ul class="chips">
+              <li>Shared flat</li>
+              <li>Tight budget</li>
+              <li>Healthy meals</li>
+              <li>Beginner recipes</li>
+            </ul>
+          </div>
+        </article>
+        <article class="persona-card">
+          <header>
+            <span class="initials" aria-hidden="true">M</span>
+            <div>
+              <h3>Meera Iyer</h3>
+              <p class="who-line">38 · School teacher · Pune</p>
+            </div>
+          </header>
+          <blockquote>Dinner is already decided. I need the ingredients before the children are hungry.</blockquote>
+          <div>
+            <h4>Goals</h4>
+            <ul>
+              <li>Recipes that serve four, scaled to the family</li>
+              <li>A short list of weeknight meals the children will eat</li>
+              <li>Leave out oil, rice, and spices already at home</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Frustrations</h4>
+            <ul>
+              <li>Most recipes are written for two</li>
+              <li>One missing masala means another shop</li>
+              <li>The school run and dinner prep happen at the same time</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Habits</h4>
+            <ul class="chips">
+              <li>Weeknight dinners</li>
+              <li>Family of four</li>
+              <li>Vegetarian</li>
+              <li>Staples at home</li>
+            </ul>
+          </div>
+        </article>
       </div>
-    </article>
-
-    <article class="card persona">
-      <img class="avatar" src="img/persona-harsh-avatar.webp" width="151" height="151" alt="Portrait of Harsh, a young man with glasses smiling outdoors.">
-      <div>
-        <h3>Harsh, student</h3>
-        <p>Male · 21 · Student. Harsh is a 3rd year design student and a fitness freak. He lives in Delhi with 2 boys in a shared apartment. He does not get as much time to cook as he's occupied with assignments and working out.</p>
-        <h3>Goals</h3>
-        <ul>
-          <li>More options for Healthy recipes</li>
-          <li>Deals and offers to buy grocery as they live on a tight budget.</li>
-          <li>Needs options for Beginner level recipes which are quick and on the go</li>
-        </ul>
-        <h3>Pain points</h3>
-        <ul>
-          <li>Struggles to keep track of essential grocery.</li>
-          <li>Finds it expensive and a hassle to buy groceries offline.</li>
-          <li>Ends up wasting his study time in cooking as the recipes are elaborate.</li>
-        </ul>
-      </div>
-    </article>
-
+    </div>
   </div>
 </div></section>
 
@@ -714,11 +798,11 @@ table.wide{min-width:720px}
     </ul>
     <figure class="figure">
       <a href="img/research-ia-full.webp"><img src="img/research-ia.webp" width="2000" height="682" alt="Information architecture diagram. Amazon Fresh HomePage splits into Shop by Recipe and Search. Shop by Recipe offers choose a recipe, filter by category, cuisine, rating and difficulty, and a veg or non-veg toggle. Search leads to a recipe page, filters, or shopping ingredients directly and checking out."></a>
-      <figcaption>The information architecture. Click the diagram to open the full board. Along the bottom of that board are earlier sketches of the same map. They are too small to read as text, which is why the outline above follows the main diagram only.</figcaption>
+      <figcaption>Information architecture, from the Fresh homepage into a recipe or straight to checkout.</figcaption>
     </figure>
 
     <h3 id="wireframes">Sketches, then a wireframe tool, then Figma</h3>
-    <p>I refined the screens over several passes, looking for a layout that did the job and still felt straightforward. I started with low-fidelity sketches, then built the app in a wireframe tool, and then moved into Figma, where I iterated on the screens and on the pieces inside them. The final screens in the next sections are that Figma work. The sketches themselves were not a separate image on the project page. This is the wireframe set:</p>
+    <p>I refined the screens over several passes, looking for a layout that did the job and still felt straightforward. I started with low-fidelity sketches, then built the app in a wireframe tool, and then moved into Figma, where I iterated on the screens and on the pieces inside them. The final screens in the next sections are that Figma work. This is the wireframe set:</p>
     <ul>
       <li>Homepage, with a choice of Shop by category or Shop by Recipe.</li>
       <li>Shop by Recipe landing, with Chef's Special, Healthy Recipes, and Shop items on the cards.</li>
@@ -825,9 +909,9 @@ table.wide{min-width:720px}
     <p>Just as important, the clickable prototype made the concept easy to review and demo: anyone could tap through the full journey instead of imagining it from static screens.</p>
 
     <h3 id="reflection">What I took away</h3>
-    <p><b>The research decided the shelves and the delivery promise.</b> Quick Cooking is a homepage shelf because 73% asked for more of those meals, not because it looked good in a grid. 2-hour delivery is in the explainer because 95.8% wanted recipe shopping with that speed, and because no competitor on the chart could offer it.</p>
+    <p><b>The research decided the shelves and the delivery promise.</b> Quick Cooking is a homepage shelf because 73% asked for more of those meals, not because it looked good in a grid. 2-hour delivery is in the explainer because 95.8% wanted recipe shopping at that speed.</p>
     <p><b>Reusing patterns is a design choice, not a shortcut.</b> The most useful decisions here were about what <em>not</em> to invent: the Fresh shell, the search results list and the standard cart. That left the new ideas, the shelves and the ingredient checklist, room to stand out. BigBasket already had a cookbook. The difference I was designing was that the recipe and the basket are the same trip.</p>
-    <p><b>The ingredient checklist does the most work.</b> It is the interaction that turns a recipe into a personal basket, which is what Ankit needs when he is short the last ingredient after work, and what Sakshi needs when she is shopping for a party. It is the first thing I would put in front of shoppers in a usability test.</p>
+    <p><b>The ingredient checklist does the most work.</b> It is the interaction that turns a recipe into a personal basket, which is what Ankit needs when short the last ingredient after work, and what Sakshi needs when shopping for a party. It is the first thing I would put in front of shoppers in a usability test.</p>
     <p><b>What I would still do differently.</b> I would test that checklist with shoppers before the visual design gets this polished, to see whether the tick and the plus read as clearly as I think they do. The survey told me the problem. It did not watch anyone use the control. Working on this taught me that the most valuable thing a prototype does is start that conversation.</p>
 
     <h3 id="next">What I'd propose next</h3>
@@ -843,12 +927,12 @@ table.wide{min-width:720px}
       <div class="card"><h3>Recipe collections</h3><p>Let people save recipes into their own groups, such as healthy recipes, kids' recipes, or desserts, and come back to them without searching again.</p></div>
     </div>
     <p>The first row is the next round of design work on the flow that exists. The second row is the later scope: a random picker, voice directions, and collections.</p>
-    <p>Case study and design by <b>Suvarna Myneni</b>, Senior Product / UX Designer. Screens from my Figma file for Amazon Fresh Shop by Recipe. Research charts, personas, the user flow, the information architecture, and the wireframes are from that work.</p>
+    <p>Case study and design by <b>Suvarna Myneni</b>, UX Designer. The screens are from the Figma prototype for Amazon Fresh Shop by Recipe, along with the research, personas, user flow, information architecture, and wireframes.</p>
   </div>
 </div></section>
 
 <section class="cs-section" id="metrics"><div class="wrap">
-  <div class="head"><div class="num">14</div><div><h2>Metrics</h2><p>Survey results are stated as measured. The success measures for the feature itself had no number attached, so they stay targets.</p></div></div>
+  <div class="head"><div class="num">14</div><div><h2>Metrics</h2><p>What the survey measured, and the targets I would use for the feature.</p></div></div>
   <div class="body">
     <div class="grid g4">
       <div class="metric"><div class="v">48</div><div class="l">People surveyed, aged 18 to 55</div><div class="n">Measured</div></div>
@@ -858,10 +942,10 @@ table.wide{min-width:720px}
     </div>
     <div class="grid g2">
       <div class="metric"><div class="v">58.3%</div><div class="l">Find it difficult to choose recipes online</div><div class="n">Measured</div></div>
-      <div class="metric"><div class="v">60 / 50</div><div class="l">Healthy Meals and Veg Meals, as printed on the survey bars. Not stated as percents. Three shorter bars had no printed value.</div><div class="n">Measured</div></div>
+      <div class="metric"><div class="v">60 / 50</div><div class="l">Healthy Meals and Veg Meals, from the survey</div><div class="n">Measured</div></div>
     </div>
     <h3>How I would measure the feature</h3>
-    <p>These are the success measures I named while designing. The case study did not set a numeric goal for any of them, and the prototype was not instrumented, so none is shown as a result.</p>
+    <p>These are the success measures I named while designing. I did not set a numeric goal for any of them, and the prototype was not instrumented, so none is shown as a result.</p>
     <div class="grid g2">
       <div class="card"><span class="tag">Target</span><h3>Recipe-to-cart conversion</h3><p>How often viewing a recipe leads to its ingredients landing in the cart.</p></div>
       <div class="card"><span class="tag">Target</span><h3>Basket completeness</h3><p>Whether shoppers get everything a dish needs, without missing items.</p></div>
@@ -877,5 +961,15 @@ table.wide{min-width:720px}
   <div style="text-align:right"><small>Next project</small><a href="https://suvarnamyneni-project.github.io/my-exp-mira-case-study/">myEXP + Mira</a></div>
 </div></div>
 <footer class="cs-foot"><div class="wrap">© 2026 Suvarna Myneni · <a href="https://www.linkedin.com/in/suvarnamyneni/">LinkedIn</a></div></footer>
+<script>
+document.querySelectorAll('[data-persona-scroll]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var row = document.getElementById('persona-row');
+    var card = row.querySelector('.persona-card');
+    var gap = 16;
+    row.scrollBy({ left: Number(btn.getAttribute('data-persona-scroll')) * (card.offsetWidth + gap), behavior: 'smooth' });
+  });
+});
+</script>
 </body>
 </html>
